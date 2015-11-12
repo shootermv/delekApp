@@ -1,0 +1,25 @@
+<ion-view view-title="Vehicles">
+  <ion-content class="padding">
+    
+ <button class="button button-positive icon ion-plus" ng-click="openAddModal()">
+ </button>
+
+
+<div class="list card">
+      <div style="text-align:center;">
+        <ion-spinner icon="android" ng-if="loading"></ion-spinner>
+      </div>
+      
+    <div class="item item-thumbnail-left item-button-right" href="#" ng-repeat="vehicle in vehicles">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHpZWtdvg7VcDeyz9dkiWRhE4ahLO9zkA35uD--bhr-18csyU1DAqXBsc">
+      
+      
+      <a href ng-click="goToVehicle(vehicle._id.$oid)"><h2>{{vehicle.name}}</h2></a>
+      <button class="button button-assertive" ng-click="showConfirm(vehicle)">
+        <i class="icon ion-trash-a" ></i>
+      </button>
+    </div>
+
+</div>
+  </ion-content>
+</ion-view>

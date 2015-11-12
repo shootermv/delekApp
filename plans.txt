@@ -1,0 +1,13 @@
+1. support for uploading vehicle images
+2. upload app to some online hosting (gitpages or heroku)
+3. support user authentication (first time)   ------------------ V
+   3.1. way to create facebook token     ----------------------- V
+4a. support display default vehicle stats----------------------- V
+4b. support add entry to default vehicle ----------------------- V
+
+5. stats view  - dropdown of current vehicle
+6. to use resources
+7. rename tabs account state
+8. unit tests
+9. e2e tests
+10. upload code to bitbucket/git

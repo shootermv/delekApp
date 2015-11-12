@@ -1,0 +1,53 @@
+<ion-view view-title="Add Entry">
+  <ion-content>
+      <form name="entryForm" novalidate>
+        <!--fuel-->
+        <div class="row" ng-class="{'no-padding-top': !entry.fuel}">
+          <div class="col">
+            <label class="item item-input large" ng-class="{ 'has-error':entryForm.fuel.$touched && entryForm.fuel.$invalid }">
+              <input type="number" min="0" placeholder="Fuel" ng-model="entry.fuel" name="fuel" required>
+            </label>
+            <div class="form-errors"  
+              ng-show="entryForm.fuel.$error && entryForm.$submitted"
+              ng-messages="entryForm.fuel.$error">
+              <div ng-messages-include="templates/messages.html"></div>
+            </div> 
+          </div>
+        </div>
+        <!--cost-->
+        <div class="row" ng-class="{'no-padding-top': !entry.cost}">
+          <div class="col">
+            <label class="item item-input large" ng-class="{ 'has-error':entryForm.cost.$touched && entryForm.cost.$invalid }">
+              <input type="number" placeholder="Cost" ng-model="entry.cost" name="cost" required min="0">
+            </label>
+            <div class="form-errors"  
+              ng-show="entryForm.cost.$error && entryForm.$submitted"
+              ng-messages="entryForm.cost.$error">
+              <div ng-messages-include="templates/messages.html"></div>
+            </div>            
+          </div>
+        </div>
+        <!--milage-->
+        <div class="row" ng-class="{'no-padding-top': !entry.mileage}">
+          <div class="col">
+            <label class="item item-input large">
+              <input type="number" placeholder="Milage" ng-model="entry.mileage" name="mileage"  min="0">
+            </label>
+            <div class="form-errors"  
+              ng-show="entryForm.mileage.$error && entryForm.$submitted"
+              ng-messages="entryForm.mileage.$error">
+              <div ng-messages-include="templates/messages.html"></div>
+            </div>            
+          </div>
+        </div>       
+        
+              
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="save(entry, entryForm)">
+              Save
+            </button>
+        </div>
+        
+      </form>
+  </ion-content>
+</ion-view>

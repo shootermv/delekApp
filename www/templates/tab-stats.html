@@ -1,0 +1,30 @@
+<ion-view view-title="Stats">
+
+  <ion-content class="padding">
+    <div class="list">     
+        <select ng-change="changeVehicle(vehicle._id.$oid)" ng-options="vehicle as vehicle.name for vehicle in vehicles track by vehicle._id.$oid" ng-model="selected.value">
+        </select>             
+    </div>
+    
+    
+    <div class="list card">
+
+      <div class="item item-divider">Summary Of This Month</div>
+      
+      <div style="text-align:center;" ng-if="loading" class="padding-vertical">
+        <ion-spinner icon="android" ></ion-spinner>
+      </div>
+      <div class="item item-body" ng-if="!loading">
+        <div>
+          Gas(Lit.):<strong>{{summary.fuel}}</strong>
+        </div>
+        <div>
+          Cost:<strong>{{summary.totalCost}}</strong>
+        </div>
+        <div>
+          Mileage:<strong>{{summary.mileage}}</strong>
+        </div>                
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

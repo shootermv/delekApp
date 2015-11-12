@@ -1,0 +1,34 @@
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Add Vehicle</h1>
+    </ion-header-bar>
+    <ion-content>
+      
+ 
+      
+      <form name="vehicleForm" novalidate >
+      
+         <div class="row" ng-class="{'no-padding-top': !vehicle.name}" >
+          <div class="col">
+            <label class="item item-input large" ng-class="{ 'has-error':vehicleForm.name.$touched && vehicleForm.name.$invalid }">
+              <input type="text" min="0" placeholder="Name" ng-model="vehicle.name" name="name" required>
+            </label>
+            <div class="form-errors"  
+              ng-show="vehicleForm.name.$error && vehicleForm.$submitted"
+              ng-messages="vehicleForm.name.$error">
+              <div ng-messages-include="templates/messages.html"></div>
+            </div> 
+          </div>
+        </div>
+      
+      
+      
+       <div class="padding">
+         <button class="button button-positive" ng-click="closeAddModal(vehicleForm)">
+           Save
+         </button>
+       </div>
+        
+      </form>
+    </ion-content>
+  </ion-modal-view>

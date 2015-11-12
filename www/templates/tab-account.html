@@ -1,0 +1,22 @@
+<ion-view view-title="Charts">
+  <ion-content>
+      <div style="text-align:center;">
+        <ion-spinner icon="android" ng-if="loading"></ion-spinner>
+      </div>
+      <div ng-if="!loading">
+        <div class="row header">
+          <div class="col">date</div>
+          <div class="col">cost</div>
+          <div class="col">mileage</div>
+          <div class="col">fuel</div>        
+        </div>
+        <div class="row" ng-repeat="rec in records">
+          <div class="col">{{rec.date | date :'dd/MM/yyyy HH:mm'}}</div>
+          <div class="col">{{rec.cost}}</div>
+          <div class="col">{{rec.mileage }}</div>
+          <div class="col">{{rec.fuel}}</div>          
+        </div>
+       </div>
+        
+  </ion-content>
+</ion-view>

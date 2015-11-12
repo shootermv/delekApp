@@ -1,0 +1,29 @@
+
+
+
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="MainCtrl">
+
+  <!-- Stats Tab -->
+  <ion-tab ng-show="$root.defaultVehicle" title="Stats" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" ng-href="{'#/tab/stats/'+$root.defaultVehicle}">
+    <ion-nav-view name="tab-stats"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Chats Tab -->
+  <ion-tab ng-show="$root.defaultVehicle" title="Add Entry" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/addentry">
+    <ion-nav-view name="tab-addentry"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Vehicles Tab -->
+  <ion-tab title="Vehicles" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>
