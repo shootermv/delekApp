@@ -4,7 +4,6 @@
    3.1. way to create facebook token     ----------------------- V
 4a. support display default vehicle stats----------------------- V
 4b. support add entry to default vehicle ----------------------- V
-
 5. stats view  - dropdown of current vehicle-------------------- V
 6. to use "resources" lib for services
 7. rename tabs account state
@@ -12,4 +11,4 @@
 9. e2e tests
 10. upload code to bitbucket/git-------------------------------- V
 11. when deleting vehicles - delete its fuel records as well
-12 "add form"- get recent mileage dislpayed in the input 
+12. "add form"- get recent mileage dislpayed in the input 

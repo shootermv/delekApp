@@ -2,8 +2,19 @@ angular.module('delekApp.services', [])
 
 .factory('Fuel', function($http, $q, mongoLab) {
 
-  return {
-    all: function(vehicleId) {
+  var service = {    
+    all: all,
+    deleteVehicleStats: deleteVehicleStats,    
+    getSummary: getSummary,
+    save: save     
+  };
+  
+  return service;
+  
+  //PRIVATE
+  //---------------------------------------------
+  //getting all stats of some vehicle
+  function all(vehicleId) {
       var params = '{"vehicleId":"' + vehicleId + '"}';
       
       var deferr = $q.defer();
@@ -13,8 +24,11 @@ angular.module('delekApp.services', [])
         alert(err);        
       });
       return deferr.promise;
-    },
-    getSummary: function(vehicleId){
+   }
+   
+
+    //get fuel summary of some vehicle
+    function getSummary(vehicleId){
       var summary = {
         mileage:0,
         fuel:0,
@@ -39,8 +53,23 @@ angular.module('delekApp.services', [])
         });
       }
       return deferr.promise;
-    },
-    save: function(newFuelEntry) {
+     }
+     
+    //delete Stats of Vehicle
+    function deleteVehicleStats(vehicleId){
+      var params = '{"vehicleId":"' + vehicleId + '"}';
+      var deferr = $q.defer();
+       $http.delete(mongoLab.baseUrl + 'fuel?q='+ params + '&' + mongoLab.keyParam).success(function(fuelRecords){
+        deferr.resolve(fuelRecords);
+       }).error(function(err){
+        alert(err);        
+       });
+       return deferr.promise;
+     } 
+      
+
+    //adding new fuel entry 
+    function save(newFuelEntry) {
       //must add date
       newFuelEntry.date = new Date().getTime();
       var deferr = $q.defer();
@@ -50,6 +79,5 @@ angular.module('delekApp.services', [])
         alert(err);        
       });
       return deferr.promise;
-    }
-  };
+    }   
 });
