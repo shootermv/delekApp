@@ -23,7 +23,7 @@ angular.module('delekApp', ['ionic', 'delekApp.controllers', 'delekApp.services'
     
     //fb
     ngFB.init({
-      appId: 'my-key',
+      appId: '138458469846435',
       oauthRedirectURL:'http://localhost:8100/templates/oauthcallback.html',
       tokenStore:$cookies
      });
