@@ -99,10 +99,10 @@ angular.module('delekApp', ['ionic', 'delekApp.controllers', 'delekApp.services'
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.vehicles', {
+    url: '/vehicles',
     views: {
-      'tab-account': {
+      'tab-vehicles': {
         templateUrl: 'templates/tab-vehicles.html',
         controller: 'VehiclesCtrl'
       }
