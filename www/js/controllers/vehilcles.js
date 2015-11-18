@@ -3,11 +3,18 @@ angular.module('delekApp.controllers')
 
 .controller('VehiclesCtrl', function($scope, Vehicles, $state, $ionicModal, $ionicPopup, $ionicLoading, $timeout) {
     $scope.vehicle = {};
+    
+    
     function activate(){
         $scope.loading = true;
         Vehicles.get().then(function(vehicles){ 
             $scope.loading = false;   
             $scope.vehicles = vehicles;
+            
+             //check if there is no default Vehicle stored and if not - store the first 
+             if(vehicles.length && !Vehicles.getDefault()){
+                Vehicles.storeDefault(vehicles[0]._id.$oid);
+             }
         });       
     }
     
@@ -52,6 +59,11 @@ angular.module('delekApp.controllers')
            }
        },100);
        
+    }
+    
+    $scope.isItemActive = function(vehicle) {
+       var defaultVehicle = Vehicles.getDefault(); // || $scope.vehicles[0]._id.$oid
+       return  defaultVehicle===vehicle._id.$oid;
     }
    //confirm deleteVehicle dialog
     $scope.showConfirm = function(vehicle) {

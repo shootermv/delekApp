@@ -10,7 +10,7 @@
         <ion-spinner icon="android" ng-if="loading"></ion-spinner>
       </div>
       
-    <div class="item item-thumbnail-left item-button-right" href="#" ng-repeat="vehicle in vehicles">
+    <div class="item item-thumbnail-left item-button-right" href ng-repeat="vehicle in vehicles" ng-class="{active: isItemActive(vehicle)}">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHpZWtdvg7VcDeyz9dkiWRhE4ahLO9zkA35uD--bhr-18csyU1DAqXBsc">
       
       
