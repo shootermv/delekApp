@@ -10,7 +10,7 @@ angular.module('delekApp.controllers')
 		if(Vehicles.getDefault()){
 			$state.go('tab.stats',{vehicleId:Vehicles.getDefault()});
 		}else{//if no default vehicle saved - go to vehicles tab
-			$state.go('tab.account');
+			$state.go('tab.vehicles');
 		}
 	}
 	function checkAuth(){
