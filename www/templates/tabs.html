@@ -11,12 +11,12 @@ navigation history that also transitions its views in and out.
 <ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="MainCtrl">
 
   <!-- Stats Tab -->
-  <ion-tab ng-show="defaultVehicle" title="Stats" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" ng-href="{'#/tab/stats/'+defaultVehicle}">
+  <ion-tab title="Stats" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" ui-sref="tab.stats({vehicleId:defaultVehicle})">
     <ion-nav-view name="tab-stats"></ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
-  <ion-tab ng-show="defaultVehicle" title="Add Entry" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/addentry">
+  <ion-tab title="Add Entry" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref="tab.addentry({vehicleId:defaultVehicle})">
     <ion-nav-view name="tab-addentry"></ion-nav-view>
   </ion-tab>
 
