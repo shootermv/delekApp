@@ -10,8 +10,8 @@ angular.module('delekApp.controllers')
     entryForm.cost.$setTouched();
     
     //retrieve vehicleId
-    var vehicleId = Vehicles.getDefault();
-    if(entryForm.$valid){    
+    var vehicleId = $state.params.vehicleId;
+    if(entryForm.$valid && vehicleId){    
      entry.vehicleId = vehicleId;   
      Fuel.save(entry).then(function(){
        $scope.entry = {};

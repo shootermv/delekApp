@@ -81,7 +81,7 @@ angular.module('delekApp', ['ionic', 'delekApp.controllers', 'delekApp.services'
   })
 
   .state('tab.addentry', {
-      url: '/addentry',
+      url: '/addentry/:vehicleId',
       views: {
         'tab-addentry': {
           templateUrl: 'templates/tab-addEntry.html',
